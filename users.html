@@ -1,0 +1,81 @@
+<html>
+<head>
+	<title>WeProject</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="main.js"></script>
+</head>
+<div class="container"><a href="users.html">Users</a> | <a href="projects.html">Projects</a></div>
+<body onload="getUsers()">
+	<div class="container">
+		<h3>Add New User</h3>
+		<form id="add-user">
+			<div class="form-group">
+				<label>Username</label>
+				<input type="text" id="username" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Password</label>
+				<input type="text" id="password" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>First Name</label>
+				<input type="text" id="firstname" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Last Name</label>
+				<input type="text" id="lastname" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Email</label>
+				<input type="text" id="email" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Occupation</label>
+				<input type="text" id="occupation" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>In University</label>
+				<input type="text" id="ifinuniversity" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>University</label>
+				<input type="text" id="university" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Address</label>
+				<input type="text" id="address" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>City</label>
+				<input type="text" id="city" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>State</label>
+				<input type="text" id="state" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Zip Code</label>
+				<input type="text" id="zip" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Phone Number</label>
+				<input type="text" id="phone" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Projects Posted</label>
+				<input type="text" id="projectsposted" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Projects Joined</label>
+				<input type="text" id="projectsjoined" class="form-control">
+			</div>
+			<input type="submit" name="submit" value="Submit" class="btn btn-primary">
+		</form>
+		<hr />
+		<div class="row">
+			<div id="users"></div>
+		</div>
+	</div>
+</body>
+</html>
