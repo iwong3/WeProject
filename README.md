@@ -8,6 +8,11 @@ Shuangke Li, Wuchang Li, Ivan Wong, Xin Zhang
 
 Web App for Team WeProject
 
+Uses...
+- Bootstrap
+- RESTful API through jQuery, AJAX
+- MongoDB hosted on MLab
+
 =======================================================================
 
 Working functionality:
