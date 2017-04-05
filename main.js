@@ -191,7 +191,7 @@ $(document).ready(function(){
 //Get Users
 function getUsers(){
 	$.ajax({
-		url: "https://api.mlab.com/api/1/databases/weproject/collections/users?apiKey=08PeRHvk8_mwcqYzuQ-4b9_hlV1np-wv",
+		url: "https://api.mlab.com/api/1/databases/weproject/collections/users?apiKey=08PeRHvk8_mwcqYzuQ-4b9_hlV1np-wv"
 	}).done(function(data){
 		var output = '<div>';
 		$.each(data, function(key, data){
@@ -222,7 +222,7 @@ function getUsers(){
 //Get Projects
 function getProjects(){
 	$.ajax({
-		url: "https://api.mlab.com/api/1/databases/weproject/collections/projects?apiKey=08PeRHvk8_mwcqYzuQ-4b9_hlV1np-wv",
+		url: "https://api.mlab.com/api/1/databases/weproject/collections/projects?apiKey=08PeRHvk8_mwcqYzuQ-4b9_hlV1np-wv"
 	}).done(function(data){
 		var output = '<div>';
 		$.each(data, function(key, data){
@@ -242,6 +242,34 @@ function getProjects(){
 		});
 		output += '</div>';
 		$('#projects').html(output);
+	});
+}
+
+//Get Projects By University
+function getUniversityProjects(){
+	$.ajax({
+		url: "https://api.mlab.com/api/1/databases/weproject/collections/projects?apiKey=08PeRHvk8_mwcqYzuQ-4b9_hlV1np-wv",
+		data: {
+			categories: "university"
+		}
+	}).done(function(data){
+		var output = '<div>';
+		$.each(data, function(key, data){
+			output += '<div class="well">';
+			output += '<h3>'+"Title: "+data.title+'</h3>';
+			output += '<p>'+"Owner: "+data.owner+'</p>';
+			output += '<p>'+"Description: " +data.description+'<p>';
+			output += '<p>'+"Number of Group Members: "+data.numgroupmembers+'<p>';
+			output += '<p>'+"Begin Date: "+data.begindate+'<p>';
+			output += '<p>'+"End Date: "+data.enddate+'<p>';
+			output += '<p>'+"Categories: "+data.categories+'<p>';
+			output += '<p>'+"Awards: "+data.awards+'<p>';
+			output += '<p>'+"Contact Method: "+data.contactmethod+'<p>';
+			output += '<p>'+"Members: "+data.members+'<p>';
+			output += '</div>';
+		});
+		output += '</div>';
+		$('#universityprojects').html(output);
 	});
 }
 
