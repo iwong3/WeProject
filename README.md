@@ -1,6 +1,9 @@
 Team WeProject
+
 CS 4261 Spring 2017
+
 Shuangke Li, Wuchang Li, Ivan Wong, Xin Zhang
+
 =======================================================================
 
 Web App for Team WeProject
