@@ -7,7 +7,7 @@
 	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script src="main.js"></script>
 </head>
-<body onload="getUniversityProjects()">
+<body onload="getProjectsByCategory('Music')">
 	<div class="container">
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
@@ -38,15 +38,16 @@
 						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">My Account</a></li>
-								<li><a href="#">Projects Posted</a></li>
-								<li><a href="#">Projects Joined</a></li>
-								<li><a href="#">Settings</a></li>
-							</ul>
-						</li>
+						<li><a href="login.html">Log in</a></li>
+						<!-- <li class="dropdown"> -->
+							<!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a> -->
+							<!-- <ul class="dropdown-menu"> -->
+								<!-- <li><a href="#">My Account</a></li> -->
+								<!-- <li><a href="#">Projects Posted</a></li> -->
+								<!-- <li><a href="#">Projects Joined</a></li> -->
+								<!-- <li><a href="#">Settings</a></li> -->
+							<!-- </ul> -->
+						<!-- </li> -->
 					</ul>
 					<form class="navbar-form navbar-right">
 						<div class="form-group">
@@ -57,7 +58,14 @@
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
-		<h2>Music Projects</h2>
+		<div class="row">
+			<div class="col-md-8">
+				<h2>Music Projects</h2>
+			</div>
+			<div class="col-md-4">
+				<h2><input type="button" class="btn btn-info pull-right" value="Add Project" onclick="location.href = 'addproject.html';"></h2>
+			</div>
+		</div>
 		<div class="row">
 			<div id="universityprojects"></div>
 		</div>
