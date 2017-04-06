@@ -17,22 +17,22 @@ Uses...
 
 Working functionality:
 - Add an user
-- Add a project
+- Add a project with button
 - Home page created
 - Category pages created (university, technology, health, music, other)
+- Can search by category (GET by category)
+- Log in page created
+- Sign up page created
+- Some form checking for add project (required fields, category is a dropdown)
 
 =======================================================================
 
 Functionality to implement:
 - Log in authorization
-- Log in page
 - Add user with field requirements
-- Add project with field requirements
-- GET with parameter checks (by category)
+- Add project with field requirements (calendar for date, modify fields (length), number inputs)
 - GET with parameter checks (by project id)
 - Create individual project pages
-- Create add button for projects
-- Link add project form to add button, or create a drop down form
 - Create profile page
 - Create Projects Posted page
 - Create Projects Joined page
