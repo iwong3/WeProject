@@ -1,13 +1,13 @@
 <html>
 <head>
 	<title>WeProject</title>
-	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+	<link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-	<script src="main.js"></script>
+	<script src="../main.js"></script>
 </head>
-<body onload="getProjectsByCategory('Other')">
+<body onload="getProjectsByCategory('Health')">
 	<div class="container">
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
@@ -31,9 +31,9 @@
 							<ul class="dropdown-menu">
 								<li><a href="universityprojects.html">University</a></li>
 								<li><a href="technologyprojects.html">Technology</a></li>
-								<li><a href="healthprojects.html">Health</a></li>
+								<li class="active"><a href="healthprojects.html">Health</a></li>
 								<li><a href="musicprojects.html">Music</a></li>
-								<li class="active"><a href="otherprojects.html">Other</a></li>
+								<li><a href="otherprojects.html">Other</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -60,10 +60,10 @@
 		</nav>
 		<div class="row">
 			<div class="col-md-8">
-				<h2>Other Projects</h2>
+				<h2>Health Projects</h2>
 			</div>
 			<div class="col-md-4">
-				<h2><input type="button" class="btn btn-info pull-right" value="Add Project" onclick="location.href = 'addproject.html';"></h2>
+				<h2><input type="button" class="btn btn-primary pull-right" value="Add Project" onclick="location.href = 'addproject.html';"></h2>
 			</div>
 		</div>
 		<div class="row">

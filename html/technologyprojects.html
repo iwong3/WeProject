@@ -1,16 +1,16 @@
 <html>
 <head>
 	<title>WeProject</title>
-	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+	<link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-	<script src="main.js"></script>
+	<script src="../main.js"></script>
 </head>
-<body>
+<body onload="getProjectsByCategory('Technology')">
 	<div class="container">
 		<nav class="navbar navbar-default">
-		    <div class="container-fluid">
+			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -25,14 +25,12 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="home.html">Home <span class="sr-only">(current)</span></a></li>
-						<li><a href="users.html">Add User</a></li>
-						<li><a href="projects.html">Add Project</a></li>
+						<li><a href="home.html">Home <span class="sr-only">(current)</span></a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="universityprojects.html">University</a></li>
-								<li><a href="technologyprojects.html">Technology</a></li>
+								<li class="active"><a href="technologyprojects.html">Technology</a></li>
 								<li><a href="healthprojects.html">Health</a></li>
 								<li><a href="musicprojects.html">Music</a></li>
 								<li><a href="otherprojects.html">Other</a></li>
@@ -60,12 +58,16 @@
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
-		<div class="list-group">
-			<a href="universityprojects.html" class="list-group-item list-group-item-action">University</a>
-			<a href="technologyprojects.html" class="list-group-item list-group-item-action">Technology</a>
-			<a href="healthprojects.html" class="list-group-item list-group-item-action">Health</a>
-			<a href="musicprojects.html" class="list-group-item list-group-item-action">Music</a>
-			<a href="otherprojects.html" class="list-group-item list-group-item-action">Other</a>
+		<div class="row">
+			<div class="col-md-8">
+				<h2>Technology Projects</h2>
+			</div>
+			<div class="col-md-4">
+				<h2><input type="button" class="btn btn-primary pull-right" value="Add Project" onclick="location.href = 'addproject.html';"></h2>
+			</div>
+		</div>
+		<div class="row">
+			<div id="universityprojects"></div>
 		</div>
 	</div>
 </body>

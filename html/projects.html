@@ -1,11 +1,11 @@
 <html>
 <head>
 	<title>WeProject</title>
-	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+	<link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-	<script src="main.js"></script>
+	<script src="../main.js"></script>
 </head>
 <body onload="getProjects()">
 	<div class="container">
@@ -27,7 +27,7 @@
 					<ul class="nav navbar-nav">
 						<li><a href="home.html">Home <span class="sr-only">(current)</span></a></li>
 						<li><a href="users.html">Add User</a></li>
-						<li><a href="projects.html">Add Project</a></li>
+						<li class="active"><a href="projects.html">Add Project</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -64,11 +64,11 @@
 		<form id="add-project">
 			<div class="form-group">
 				<label>Title</label>
-				<input type="text" id="title" class="form-control" required autofocus>
+				<input type="text" id="title" class="form-control">
 			</div>
 			<div class="form-group">
 				<label>Owner</label>
-				<input type="text" id="owner" class="form-control" required>
+				<input type="text" id="owner" class="form-control">
 			</div>
 			<div class="form-group">
 				<label>Description</label>
@@ -102,7 +102,7 @@
 			</div>
 			<div class="form-group">
 				<label>Contact Method</label>
-				<input type="text" id="contactmethod" class="form-control" required>
+				<input type="text" id="contactmethod" class="form-control">
 			</div>
 			<div class="form-group">
 				<label>Members</label>
@@ -111,6 +111,9 @@
 			<input type="submit" name="submit" value="Submit" class="btn btn-primary">
 		</form>
 		<hr />
+		<div class="row">
+			<div id="projects"></div>
+		</div>
 	</div>
 </body>
 </html>
