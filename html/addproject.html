@@ -1,45 +1,61 @@
-<html>
-<head>
-	<title>WeProject</title>
-	<link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script type="text/javascript" src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-	<script src="../main.js"></script>
-</head>
-<body onload="getProjects()">
-	<div class="container">
-		<nav class="navbar navbar-default">
-		    <div class="container-fluid">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="home.html">WeProject</a>
-				</div>
+<!DOCTYPE html>
+<html lang="en">
 
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li><a href="home.html">Home <span class="sr-only">(current)</span></a></li>
-						<li><a href="users.html">Add User</a></li>
-						<li><a href="projects.html">Add Project</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="universityprojects.html">University</a></li>
-								<li><a href="technologyprojects.html">Technology</a></li>
-								<li><a href="healthprojects.html">Health</a></li>
-								<li><a href="musicprojects.html">Music</a></li>
-								<li><a href="otherprojects.html">Other</a></li>
-							</ul>
-						</li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>WeProject - Post A Project</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/1-col-portfolio.css" rel="stylesheet">
+	<link href="../css/login.css" rel="stylesheet">
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body onload="getProjects()">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="intro.html">WeProject</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="intro.html#services">About</a>
+                    </li>
+                    <li>
+                        <a href="intro.html#contact">Contact</a>
+                    </li>
+					<li>
+						<a href="categories.html">Categories</a>
+					</li>
+                </ul>
+				<ul class="nav navbar-nav navbar-right">
 						<li><a href="login.html">Log in</a></li>
 						<!-- <li class="dropdown"> -->
 							<!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a> -->
@@ -51,67 +67,117 @@
 							<!-- </ul> -->
 						<!-- </li> -->
 					</ul>
-					<form class="navbar-form navbar-right">
+					<form class="navbar-form navbar-right" onload="getProjectsBySearch()" action="searchprojects.html">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search Projects...">
+							<input type="text" class="form-control" id="search" placeholder="Search Projects...">
 						</div>
 						<button type="submit" class="btn btn-default">Submit</button>
 					</form>
-				</div><!-- /.navbar-collapse -->
-			</div><!-- /.container-fluid -->
-		</nav>
-		<h3>Add New Project</h3>
-		<form id="add-project">
-			<div class="form-group">
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+		<!-- Post Project Form -->
+		<h1 class="page-header">Post a Project</h1>
+        <form action="categories.html" id="add-project">
+			<div class="form-group col-lg-12">
 				<label>Title</label>
 				<input type="text" id="title" class="form-control" required autofocus>
 			</div>
-			<div class="form-group">
+			<div class="form-group col-lg-12">
 				<label>Owner</label>
 				<input type="text" id="owner" class="form-control" required>
 			</div>
-			<div class="form-group">
+			<div class="form-group col-lg-12">
 				<label>Description</label>
-				<input type="text" id="description" class="form-control">
+				<input type="text" id="description" class="form-control input">
 			</div>
-			<div class="form-group">
+			<div class="form-group col-lg-12">
 				<label>Number of Group Members</label>
 				<input type="text" id="numgroupmembers" class="form-control">
 			</div>
-			<div class="form-group">
+			<div class="form-group col-lg-6">
 				<label>Begin Date</label>
-				<input type="text" id="begindate" class="form-control">
+				<div class='input-group date' id='datetimepicker1'>
+                    <input type='text' id='begindate' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
 			</div>
-			<div class="form-group">
+			<div class="form-group col-lg-6 pull-right">
 				<label>End Date</label>
-				<input type="text" id="enddate" class="form-control">
+				<div class='input-group date' id='datetimepicker1'>
+					<input type='text' id='enddate' class="form-control" />
+					<span class="input-group-addon">
+						<span class="glyphicon glyphicon-calendar"></span>
+					</span>
+				</div>
 			</div>
-			<div class="form-group">
+			<div class="form-group col-lg-12">
 				<label>Categories</label>
 				<select id="categories" class="form-control" required>
 					<option>University</option>
 					<option>Technology</option>
-					<option>Health</option>
+					<option>Art</option>
+					<option>Fundraising</option>
+					<option>Film</option>
 					<option>Music</option>
+					<option>Culinary</option>
 					<option>Other</option>
 				</select>
 			</div>
-			<div class="form-group">
+			<div class="form-group col-lg-12">
 				<label>Awards</label>
 				<input type="text" id="awards" class="form-control">
 			</div>
-			<div class="form-group">
+			<div class="form-group col-lg-12">
 				<label>Contact Method</label>
-				<input type="text" id="contactmethod" class="form-control" required>
+				<select id="contactmethod" class="form-control" required>
+					<option>Email</option>
+					<option>Phone</option>
+				</select>
 			</div>
-			<div class="form-group">
+			<div class="form-group col-lg-12">
 				<label>Members</label>
 				<input type="text" id="members" class="form-control">
 			</div>
-			<input type="submit" name="submit" value="Submit" class="btn btn-primary">
-			<input type="button" class="btn btn-primary pull-right" value="Cancel" onclick="location.href = 'javascript:history.back()';">
+			<div class="col-lg-6">
+				<input type="submit" name="submit" value="Submit" class="btn btn-primary">
+			</div>
+			<div class="col-lg-6 pull-right">
+				<input type="button" class="btn btn-primary pull-right" value="Cancel" onclick="location.href = 'javascript:history.back()';">
+			</div>
 		</form>
-		<hr />
-	</div>
+		
+		<div class="col-lg-12"><br></div>
+		
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; WeProject 2017</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="../js/main.js"></script>
+	
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap.js"></script>
+
 </body>
+
 </html>
