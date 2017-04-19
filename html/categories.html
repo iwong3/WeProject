@@ -17,6 +17,9 @@
     <!-- Custom CSS -->
     <link href="../css/2-col-portfolio.css" rel="stylesheet">
 
+	<!-- Firebase Script-->
+	<script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+	
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -50,12 +53,13 @@
                     <li>
                         <a href="intro.html#contact">Contact</a>
                     </li>
-					<li class="active">
+					<li>
 						<a href="categories.html">Categories</a>
 					</li>
                 </ul>
 				<ul class="nav navbar-nav navbar-right">
-						<li><a href="login.html">Log in</a></li>
+						<li id="loginButton"><a href="login.html">Log in</a></li>
+						<li id="signOutButton" class="hide"><a href="#">Sign out</a></li>
 						<!-- <li class="dropdown"> -->
 							<!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a> -->
 							<!-- <ul class="dropdown-menu"> -->
@@ -92,19 +96,19 @@
         <!-- Projects Row -->
         <div class="row">
             <div class="col-md-6 portfolio-item">
-                <a href="technologyprojects.html">
+                <a href="projectlist.html?category=cs">
                     <img class="img-responsive" src="../img/technology.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="technologyprojects.html">Technology</a>
+                    <a href="projectlist.html?category=cs">Computer Science</a>
                 </h3>
             </div>
             <div class="col-md-6 portfolio-item">
-                <a href="universityprojects.html">
+                <a href="projectlist.html?category=education">
                     <img class="img-responsive" src="../img/university.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="universityprojects.html">University</a>
+                    <a href="projectlist.html?category=education">Education</a>
                 </h3>
             </div>
         </div>
@@ -113,40 +117,19 @@
         <!-- Projects Row -->
         <div class="row">
             <div class="col-md-6 portfolio-item">
-                <a href="artprojects.html">
+                <a href="projectlist.html?category=arts">
                     <img class="img-responsive" src="../img/artcategory.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="artprojects.html">Art</a>
+                    <a href="projectlist.html?category=arts">Arts</a>
                 </h3>
             </div>
             <div class="col-md-6 portfolio-item">
-                <a href="fundraisingprojects.html">
-                    <img class="img-responsive" src="../img/cupcakes.jpg" alt="">
+                <a href="projectlist.html?category=business">
+                    <img class="img-responsive" src="../img/business.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="fundraisingprojects.html">Fundraising</a>
-                </h3>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-6 portfolio-item">
-                <a href="filmprojects.html">
-                    <img class="img-responsive" src="../img/film.jpg" alt="">
-                </a>
-                <h3>
-                    <a href="filmprojects.html">Film</a>
-                </h3>
-            </div>
-            <div class="col-md-6 portfolio-item">
-                <a href="musicprojects.html">
-                    <img class="img-responsive" src="../img/headphones.jpg" alt="">
-                </a>
-                <h3>
-                    <a href="musicprojects.html">Music</a>
+                    <a href="projectlist.html?category=business">Business</a>
                 </h3>
             </div>
         </div>
@@ -155,11 +138,11 @@
 		<!-- Projects Row -->
         <div class="row">
             <div class="col-md-6 portfolio-item">
-                <a href="culinaryprojects.html">
-                    <img class="img-responsive" src="../img/cooking.jpg" alt="">
+                <a href="projectlist.html?category=math">
+                    <img class="img-responsive" src="../img/math.jpg" alt="">
                 </a>
                 <h3>
-                    <a href="culinaryprojects.html">Culinary</a>
+                    <a href="projectlist.html?category=math">Math</a>
                 </h3>
             </div>
             <div class="col-md-6 portfolio-item">
@@ -226,6 +209,7 @@
 
     <!-- jQuery -->
     <script src="../js/categories_jquery.js"></script>
+	<script src="../js/main.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>

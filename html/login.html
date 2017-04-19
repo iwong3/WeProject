@@ -18,6 +18,9 @@
     <link href="../css/1-col-portfolio.css" rel="stylesheet">
 	<link href="../css/login.css" rel="stylesheet">
 
+	<!-- Firebase Script-->
+	<script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+	
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -27,7 +30,7 @@
 
 </head>
 
-<body onload="getProjectsByCategory('University')">
+<body onload="signIn()">
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -56,7 +59,8 @@
 					</li>
                 </ul>
 				<ul class="nav navbar-nav navbar-right">
-						<li><a href="login.html">Log in</a></li>
+						<li id="loginButton"><a href="login.html">Log in</a></li>
+						<li id="signOutButton" class="hide"><a href="#">Sign out</a></li>
 						<!-- <li class="dropdown"> -->
 							<!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a> -->
 							<!-- <ul class="dropdown-menu"> -->
@@ -83,7 +87,7 @@
     <div class="container">
 
 		<!-- Sign In Form -->
-        <form class="form-signin">
+        <div class="form-signin">
 			<h2 class="form-signin-heading">Sign in</h2>
 			<label for="inputEmail" class="sr-only">Email address</label>
 			<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
@@ -94,11 +98,11 @@
 				<input type="checkbox" value="remember-me"> Remember me
 				</label>
 			</div>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+			<button id="signInButton" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 			<div class="register">
 				<a href="register.html">Don't have an account? Sign up</a>
 			</div>
-		</form>
+		</div>
 
         <!-- Footer -->
         <footer>
@@ -112,8 +116,9 @@
 
     </div>
     <!-- /.container -->
-
+	
     <!-- jQuery -->
+	<script src="../js/projectlist_jquery.js"></script>
 	<script src="../js/main.js"></script>
 
     <!-- Bootstrap Core JavaScript -->

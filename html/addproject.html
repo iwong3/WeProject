@@ -97,14 +97,10 @@
 				<label>Description</label>
 				<input type="text" id="description" class="form-control input">
 			</div>
-			<div class="form-group col-lg-12">
-				<label>Number of Group Members</label>
-				<input type="text" id="numgroupmembers" class="form-control">
-			</div>
 			<div class="form-group col-lg-6">
 				<label>Begin Date</label>
 				<div class='input-group date' id='datetimepicker1'>
-                    <input type='text' id='begindate' class="form-control" />
+                    <input type='text' id='beginDate' class="form-control" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -113,7 +109,7 @@
 			<div class="form-group col-lg-6 pull-right">
 				<label>End Date</label>
 				<div class='input-group date' id='datetimepicker1'>
-					<input type='text' id='enddate' class="form-control" />
+					<input type='text' id='endDate' class="form-control" />
 					<span class="input-group-addon">
 						<span class="glyphicon glyphicon-calendar"></span>
 					</span>
@@ -121,27 +117,21 @@
 			</div>
 			<div class="form-group col-lg-12">
 				<label>Categories</label>
-				<select id="categories" class="form-control" required>
-					<option>University</option>
-					<option>Technology</option>
-					<option>Art</option>
-					<option>Fundraising</option>
-					<option>Film</option>
-					<option>Music</option>
-					<option>Culinary</option>
-					<option>Other</option>
+				<select id="catagories" class="form-control" required>
+					<option>arts</option>
+					<option>business</option>
+					<option>cs</option>
+					<option>education</option>
+					<option>math</option>
 				</select>
+			</div>
+			<div class="form-group col-lg-12">
+				<label>Requirements</label>
+				<input type="text" id="requirement" class="form-control">
 			</div>
 			<div class="form-group col-lg-12">
 				<label>Awards</label>
-				<input type="text" id="awards" class="form-control">
-			</div>
-			<div class="form-group col-lg-12">
-				<label>Contact Method</label>
-				<select id="contactmethod" class="form-control" required>
-					<option>Email</option>
-					<option>Phone</option>
-				</select>
+				<input type="text" id="award" class="form-control">
 			</div>
 			<div class="form-group col-lg-12">
 				<label>Members</label>
@@ -170,6 +160,20 @@
     </div>
     <!-- /.container -->
 
+	<!-- <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script> -->
+	<!-- <script> -->
+		<!-- // Initialize Firebase -->
+		<!-- var config = { -->
+			<!-- apiKey: "AIzaSyC7hvQ1qhU4-n01qVPI2vAt3Gs9fqMbBd0", -->
+			<!-- authDomain: "testfirebase-1fb45.firebaseapp.com", -->
+			<!-- databaseURL: "https://testfirebase-1fb45.firebaseio.com", -->
+			<!-- projectId: "testfirebase-1fb45", -->
+			<!-- storageBucket: "testfirebase-1fb45.appspot.com", -->
+			<!-- messagingSenderId: "79263535882" -->
+		<!-- }; -->
+		<!-- firebase.initializeApp(config); -->
+	<!-- </script> -->
+	
     <!-- jQuery -->
 	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script src="../js/main.js"></script>

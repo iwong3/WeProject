@@ -21,6 +21,9 @@
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
+	<!-- Firebase Script-->
+	<script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+	
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -207,6 +210,20 @@
         </div>
     </footer>
 
+	<script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyC7hvQ1qhU4-n01qVPI2vAt3Gs9fqMbBd0",
+			authDomain: "testfirebase-1fb45.firebaseapp.com",
+			databaseURL: "https://testfirebase-1fb45.firebaseio.com",
+			projectId: "testfirebase-1fb45",
+			storageBucket: "testfirebase-1fb45.appspot.com",
+			messagingSenderId: "79263535882"
+		};
+		firebase.initializeApp(config);
+	</script>
+	
     <!-- jQuery -->
     <script src="../js/intro_jquery.js"></script>
 
