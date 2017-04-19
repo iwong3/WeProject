@@ -355,7 +355,7 @@ function getProjectsByCategory(category){
             output += '<h3>'+data.title+'</h3>';
             output += '<h4>Posted by: '+data.owner+'</h4>';
             output += '<p>'+data.description;
-            output += '<a class="btn btn-primary pull-right" href="'+data.title+'.html">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>'; //change to url with parameter, add ?title=data.title
+            output += '<a class="btn btn-primary pull-right" href="singleproject.html?id='+encodeURIComponent(key)+'">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>'; //change to url with parameter, add ?title=data.title
             output += '</p>';
 			output += '</div>';
 			output += '</div>';
@@ -366,13 +366,10 @@ function getProjectsByCategory(category){
 	});
 }
 
-//Get Projects By Name
-function getProjectsByName(title){
+//Get Projects By ID
+function getProjectsByID(id){
 	$.ajax({
-		url: "https://testfirebase-1fb45.firebaseio.com/projects.json",
-		data: {
-			q: "{title: '" + title + "'}"
-		},
+		url: "https://testfirebase-1fb45.firebaseio.com/projects/"+id+".json",
 		type: "get"
 	}).done(function(data){
 		var output = '<div>';
@@ -383,9 +380,6 @@ function getProjectsByName(title){
         output += '</div>';
         output += '</div>';
         output += '<div class="row">';
-        output += '<div class="col-md-8">';
-        output += '<img class="img-responsive" src="../img/'+data.title+'.jpg" alt="">';
-        output += '</div>';
         output += '<div class="col-md-4">';
         output += '<h3>Project Description</h3>';
         output += '<p>'+data.description+'</p>';
@@ -399,7 +393,7 @@ function getProjectsByName(title){
 		output += '</div>';
 		});
 		output += '</div>';
-		$('#projectsbyname').html(output);
+		$('#projectsbyid').html(output);
 	});
 }
 
