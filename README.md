@@ -11,28 +11,27 @@ Web App for Team WeProject
 Uses...
 - Bootstrap
 - RESTful API through jQuery, AJAX
-- MongoDB hosted on MLab
+- Firebase Authentication
+- Firebase Realtime Database
 
 =======================================================================
 
-Working functionality:
-- Add an user
-- Add a project with button
+Working functionality
 - Home page created
 - Category pages created (university, technology, health, music, other)
-- Can search by category (GET by category)
+- Can view by category (GET by category)
+- Can add a project with button
 - Log in page created
+- Log in functionality working
 - Sign up page created
+- Sign up functionality working
 - Some form checking for add project (required fields, category is a dropdown)
 
 =======================================================================
 
 Functionality to implement:
-- Log in authorization
-- Add user with field requirements
-- Add project with field requirements (calendar for date, modify fields (length), number inputs)
-- GET with parameter checks (by project id)
-- Create individual project pages
-- Create profile page
+- Create individual project pages (how to get url by username/project id?)
+- Add project by log in user
+- If logged out and press add project, go to sign in page
 - Create Projects Posted page
-- Create Projects Joined page
+- Create Projects Joined page (to replace signout button? maybe dropdown)
