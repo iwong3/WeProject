@@ -32,9 +32,10 @@ var getUrlParameter = function getUrlParameter(sParam) {
 		firebase.auth().signOut();
 	});
 	
-	firebase.auth().onAuthStateChanged(firebaseUser => {
-		if (firebaseUser) {
-			console.log(firebaseUser);
+	//Placed here because we always want these actions to occur (show/hide login/signout buttons)
+	firebase.auth().onAuthStateChanged(user => {
+		if (user) {
+			console.log(user);
 			loginButton.classList.add('hide');
 			signOutButton.classList.remove('hide');
 		} else {
@@ -60,6 +61,15 @@ function signIn() {
 		//Sign in
 		const promise = auth.signInWithEmailAndPassword(email, pass);
 		promise.catch(e => console.log(e.message));
+		
+		//Redirect to categories page after successful login, otherwise alert the user
+		firebase.auth().onAuthStateChanged(user => {
+			if (user) {
+				window.location = 'categories.html';
+			} else {
+				alert("Login unsuccessful.");
+			}
+		});
 	});
 
 }
@@ -78,6 +88,13 @@ function signUp() {
 		//Sign up
 		const promise = auth.createUserWithEmailAndPassword(email, pass);
 		promise.catch(e => console.log(e.message));
+	});
+	
+	//Redirect to categories after successful account creation
+	firebase.auth().onAuthStateChanged(user => {
+		if (user) {
+			window.location = 'categories.html';
+		}
 	});
 	
 }
