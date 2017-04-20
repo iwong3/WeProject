@@ -1,6 +1,7 @@
 //Got this from http://stackoverflow.com/questions/19491336/get-url-parameter-jquery-or-how-to-get-query-string-values-in-js
 var getUrlParameter = function getUrlParameter(sParam) {
-	var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+	//var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+	var sPageURL = window.location.search.substring(1),
 		sURLVariables = sPageURL.split('&'),
 		sParameterName,
 		i;
@@ -9,7 +10,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 		sParameterName = sURLVariables[i].split('=');
 
 		if (sParameterName[0] === sParam) {
-			return sParameterName[1] === undefined ? true : sParameterName[1];
+			return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
 		}
 	}
 };
@@ -355,7 +356,7 @@ function getProjectsByCategory(category){
             output += '<h3>'+data.title+'</h3>';
             output += '<h4>Posted by: '+data.owner+'</h4>';
             output += '<p>'+data.description;
-            output += '<a class="btn btn-primary pull-right" href="singleproject.html?id='+encodeURIComponent(key)+'">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>'; //change to url with parameter, add ?title=data.title
+            output += '<a class="btn btn-primary pull-right" href="singleproject.html?ptitle='+encodeURIComponent(key)+'">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>'; //change to url with parameter, add ?title=data.title
             output += '</p>';
 			output += '</div>';
 			output += '</div>';
@@ -367,13 +368,12 @@ function getProjectsByCategory(category){
 }
 
 //Get Projects By ID
-function getProjectsByID(id){
+function getProjectsByID(ptitle){
 	$.ajax({
-		url: "https://testfirebase-1fb45.firebaseio.com/projects/"+id+".json",
+		url: "https://testfirebase-1fb45.firebaseio.com/projects/"+ptitle+".json",
 		type: "get"
 	}).done(function(data){
 		var output = '<div>';
-		$.each(data, function(key, data){
         output += '<div class="row">';
         output += '<div class="col-lg-12">';
 		output += '<h1 class="page-header">'+data.title+'<br><small>Posted By: '+data.owner+'</small></h1>';
@@ -385,13 +385,14 @@ function getProjectsByID(id){
         output += '<p>'+data.description+'</p>';
         output += '<h3>Project Details</h3>';
         output += '<ul>';
-		output += '<li>Number of Members: '+data.numgroupmembers+'</li>';
 		output += '<li>Start Date: '+data.beginDate+'</li>';
 		output += '<li>End Date: '+data.endDate+'</li>';
+		output += '<li>Requirements: '+data.requirement+'</li>';
+		output += '<li>Awards: $'+data.award+'</li>';
+		output += '<li>Members: '+data.members+'</li>';
 		output += '</ul>';
         output += '</div>';
 		output += '</div>';
-		});
 		output += '</div>';
 		$('#projectsbyid').html(output);
 	});
